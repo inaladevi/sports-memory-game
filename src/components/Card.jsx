@@ -1,12 +1,10 @@
-function Card({ player, handleCardClick }) {
+export default function Card({ player, handleCardClick }) {
   return (
     <div className="player-card" onClick={() => handleCardClick(player.id)}>
-      <img src={player.image} alt={player.name} className="player-img" />
-      <div className="player-info">
-        <h3>{player.name}</h3>
+      <div className="card-image-container">
+        <img src={player.image} alt={player.name} />
       </div>
+      <h3>{player.name}</h3>
     </div>
   );
 }
-
-export default Card;

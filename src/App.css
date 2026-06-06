@@ -1,0 +1,185 @@
+:root {
+  --bg-dark-stadium: #0a0a0c;
+  --bg-card: #141416;
+  --neon-pink: #ff1493;
+  --pink-glow: rgba(255, 20, 147, 0.35);
+  --text-white: #ffffff;
+  --border-thick: 3px solid #000000;
+}
+
+body {
+  background-color: var(--bg-dark-stadium);
+  color: var(--text-white);
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  background: #000000;
+  border-bottom: 4px solid var(--neon-pink);
+  box-shadow: 0 10px 30px var(--pink-glow);
+  margin-bottom: 40px;
+}
+
+.main-header .logo {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 0.08em;
+
+  text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000,
+    0px 0px 10px var(--neon-pink),
+    0px 0px 20px var(--neon-pink),
+    0px 0px 30px var(--neon-pink);
+
+  animation: jumbotronPulse 2s infinite alternate;
+}
+
+@keyframes jumbotronPulse {
+  0% {
+    filter: brightness(1);
+  }
+
+  100% {
+    filter: brightness(1.2);
+  }
+}
+
+.score-board {
+  background: #000000;
+  color: var(--text-white);
+  padding: 10px 25px;
+  border: 2px solid var(--neon-pink);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2rem;
+  font-weight: 900;
+  box-shadow: inset 0 0 15px var(--pink-glow);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  padding: 0 5%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.player-card {
+  background: var(--bg-card);
+  border: var(--border-thick);
+  box-shadow: 6px 6px 0px #000000;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+
+  animation: cardPopIn 0.4s ease-out;
+  transform-origin: center;
+  transition: all 0.15s ease;
+}
+
+.player-card:hover {
+  background: #1c1c1f;
+  border-color: var(--neon-pink);
+  transform: translate(-4px, -4px);
+  box-shadow: 10px 10px 0px #000000, 0 0 15px var(--pink-glow);
+}
+
+@keyframes cardPopIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.card-image-container {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border: var(--border-thick);
+  background: #000000;
+}
+
+.card-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-top: 14px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 2px 2px 0px #000;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #000000;
+  padding: 3rem;
+  border: var(--border-thick);
+  text-align: center;
+  box-shadow: 10px 10px 0px var(--neon-pink);
+}
+
+.modal-content h2 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: var(--neon-pink);
+  margin: 0;
+}
+
+.modal-content button {
+  background: var(--neon-pink);
+  color: #ffffff;
+  padding: 14px 35px;
+  border: var(--border-thick);
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 5px 5px 0px #000;
+}
+
+.modal-content button:active {
+  transform: translate(5px, 5px);
+  box-shadow: 0px 0px 0px #000;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

@@ -1,6 +1,6 @@
 import Card from './Card';
 
-function CardGrid({ players, handleCardClick }) {
+export default function CardGrid({ players, handleCardClick }) {
   return (
     <main className="grid-container">
       {players.map((player) => (
@@ -13,5 +13,3 @@ function CardGrid({ players, handleCardClick }) {
     </main>
   );
 }
-
-export default CardGrid;
