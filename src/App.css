@@ -24,9 +24,7 @@ body {
   align-items: center;
   padding: 1.5rem 5%;
   background: #000000;
-  border-bottom: 4px solid var(--neon-pink);
   box-shadow: 0 10px 30px var(--pink-glow);
-  margin-bottom: 40px;
 }
 
 .main-header .logo {
@@ -182,4 +180,32 @@ h3 {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.main-header-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  margin-bottom: 40px;
+}
+
+.instruction-ticker {
+  background: #0a0a0c;
+  border-top: 2px dashed var(--neon-pink);
+  border-bottom: 4px solid var(--neon-pink);
+  box-shadow: 0 10px 30px var(--pink-glow);
+  padding: 8px 0;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.instruction-ticker span {
+  display: inline-block;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  font-weight: 900;
+  color: var(--text-white);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
